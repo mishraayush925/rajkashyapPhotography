@@ -3,8 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photography Gallery</title>
+  <title id="siteTitle">Photography Gallery</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=PT+Mono&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/style.css">
   <style>
     body {
       background: linear-gradient(135deg, #ff7e5f, #feb47b);
@@ -65,75 +78,16 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
   </style>
+  <script src="Utilities.js"></script>
+  
 </head>
 <body>
 
-<div class="container">
-  <h1 class="text-center my-4">Photography Gallery</h1>
-  <div class="row">
-    <div class="col-sm-6 col-md-4 col-lg-3 gallery-item">
-      <a href="#" data-toggle="modal" data-target="#imageModal" data-image="images/wed1.jpg">
-        <img src="images/wed1.jpg" alt="Wedding Photo 1">
-        <div class="overlay">Wedding Photo 1</div>
-      </a>
-    </div>
-    <div class="col-sm-6 col-md-4 col-lg-3 gallery-item">
-        <a href="#" data-toggle="modal" data-target="#imageModal" data-image="images/wed4.jpg">
-          <img src="images/wed4.jpg" alt="Wedding Photo 4">
-          <div class="overlay">Wedding Photo 4</div>
-        </a>
-      </div>
-    <div class="col-sm-6 col-md-4 col-lg-3 gallery-item">
-      <a href="#" data-toggle="modal" data-target="#imageModal" data-image="images/wed2.jpg">
-        <img src="images/wed2.jpg" alt="Wedding Photo 2">
-        <div class="overlay">Wedding Photo 2</div>
-      </a>
-    </div>
-
-    <div class="col-sm-6 col-md-4 col-lg-3 gallery-item">
-      <a href="#" data-toggle="modal" data-target="#imageModal" data-image="images/wed3.jpg">
-        <img src="images/wed3.jpg" alt="Wedding Photo 3">
-        <div class="overlay">Wedding Photo 3</div>
-      </a>
-    </div>
-    <div class="col-sm-6 col-md-4 col-lg-3 gallery-item">
-      <a href="#" data-toggle="modal" data-target="#imageModal" data-image="images/wed4.jpg">
-        <img src="images/wed4.jpg" alt="Wedding Photo 4">
-        <div class="overlay">Wedding Photo 4</div>
-      </a>
-    </div>
-    <div class="col-sm-6 col-md-4 col-lg-3 gallery-item">
-      <a href="#" data-toggle="modal" data-target="#imageModal" data-image="images/wed5.jpg">
-        <img src="images/wed4.jpg" alt="Wedding Photo 5">
-        <div class="overlay">Wedding Photo 5</div>
-      </a>
-    </div>
-    <div class="col-sm-6 col-md-4 col-lg-3 gallery-item">
-        <a href="#" data-toggle="modal" data-target="#imageModal" data-image="images/wed3.jpg">
-          <img src="images/wed3.jpg" alt="Wedding Photo 3">
-          <div class="overlay">Wedding Photo 3</div>
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4 col-lg-3 gallery-item">
-        <a href="#" data-toggle="modal" data-target="#imageModal" data-image="images/wed3.jpg">
-          <img src="images/wed3.jpg" alt="Wedding Photo 3">
-          <div class="overlay">Wedding Photo 3</div>
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4 col-lg-3 gallery-item">
-        <a href="#" data-toggle="modal" data-target="#imageModal" data-image="images/wed3.jpg">
-          <img src="images/wed3.jpg" alt="Wedding Photo 3">
-          <div class="overlay">Wedding Photo 3</div>
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4 col-lg-3 gallery-item">
-        <a href="#" data-toggle="modal" data-target="#imageModal" data-image="images/wed3.jpg">
-          <img src="images/wed3.jpg" alt="Wedding Photo 3">
-          <div class="overlay">Wedding Photo 3</div>
-        </a>
-      </div>
-    <!-- Add more images as needed -->
-  </div>
+<div class="container" id="galleryBodyEnds">
+  <h1 class="text-center my-4" id="galleryTitle">Photography Gallery</h1>
+  <div class="galleryContainer" id="galleryGrid"></div>
+  
+  
 </div>
 
 <!-- Modal -->
@@ -141,7 +95,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="imageModalLabel">Photo Preview</h5>
+        <h5 class="modal-title" id="imageModalLabel">Preview</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -154,6 +108,10 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<script src="footers.js"></script>
+<script src="galleryImgs.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
@@ -163,6 +121,29 @@
     var modal = $(this);
     modal.find('#modalImage').attr('src', imageSrc);
   });
+  var glr= document.getElementById('galleryBodyEnds');
+  glr.innerHTML+=footersToAppend;
+
 </script>
+<script>
+    var imgContainer= document.getElementById('galleryGrid');
+    if(getQueryParams().item =='wed'){
+        imgContainer.innerHTML +=galleryBuilder('images/wed1.jpg',1);
+        document.getElementById('galleryTitle').innerHTML= 'Weddding Collections';
+        document.getElementById('siteTitle').innerHTML= 'Weddding Collections Page';
+
+
+    }
+  else if(getQueryParams().item =='street'){
+    imgContainer.innerHTML +=galleryBuilder('images/wed1.jpg',2);
+    document.getElementById('galleryTitle').innerHTML= 'Street Collections';
+        document.getElementById('siteTitle').innerHTML= 'Street Collections Page';
+
+  }
+  else if(getQueryParams().item =='pre-wed'){
+
+  }
+  </script>
+
 </body>
 </html>
